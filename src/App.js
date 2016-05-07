@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import Layout from './Layout';
-import Counter from './Counter';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router';
+import routes from './routes';
 
-export default class App extends Component {
-  render() {
-    return (
-      <Layout>
-        <Counter />
-      </Layout>
-    );
-  }
-}
+const App = ({ store, history }) => (
+    <Provider store={store}>
+        <Router history={history}>
+            {routes}
+        </Router>
+    </Provider>
+);
+
+export default App;
