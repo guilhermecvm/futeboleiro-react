@@ -3,12 +3,12 @@ import { Route, IndexRoute } from 'react-router'
 
 import MainLayout from './components/main-layout';
 import Home from './components/home';
-import About from './components/about';
+import Matches from './components/matches';
 
 export default (
     <Route path="/" component={MainLayout}>
         <IndexRoute component={Home} />
 
-        <Route path="about" component={About} />
+        <Route path="matches" component={Matches} />
     </Route>
 );

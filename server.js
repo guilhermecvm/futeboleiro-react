@@ -8,6 +8,13 @@ new WebpackDevServer(webpack(config), {
     historyApiFallback: true,
     stats: {
         colors: true
+    },
+    proxy: {
+        '/temporeal/futebol/central.json': {
+            target: 'http://globoesporte.globo.com/',
+            secure: false,
+            changeOrigin: true
+        }
     }
 }).listen(3000, 'localhost', function (err, result) {
     if (err) {
