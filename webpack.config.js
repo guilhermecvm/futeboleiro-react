@@ -34,6 +34,10 @@ module.exports = {
             loaders: ['react-hot/webpack', 'babel'],
             exclude: /node_modules/,
             include: path.join(__dirname, 'src')
+        },
+        {
+            include: /\.json$/,
+            loaders: ['json-loader']
         }]
     }
 };

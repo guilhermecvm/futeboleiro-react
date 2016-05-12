@@ -6,7 +6,7 @@ const initialState = {
     lastUpdate: Date.now()
 }
 
-const matchesReducer = function(state = initialState, action) {
+const matchesReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.MATCHES_RECEIVE:
             return Object.assign({}, state, {

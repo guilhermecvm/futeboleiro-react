@@ -1,15 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 
-const MainLayout = React.createClass({
-    render: function() {
+class MainLayout extends Component {
+    render() {
         return (
             <div className="app">
                 <header className="primary-header"></header>
                 <aside className="primary-aside">
                     <ul>
-                        <li><Link to="/" activeClassName="active">Home</Link></li>
-                        <li><Link to="/matches" activeClassName="active">Matches</Link></li>
+                        <li><Link to="/" activeClassName="active">Matches</Link></li>
                     </ul>
                 </aside>
                 <main>
@@ -18,6 +17,6 @@ const MainLayout = React.createClass({
             </div>
         );
     }
-});
+}
 
 export default MainLayout;
