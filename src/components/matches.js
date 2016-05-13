@@ -4,24 +4,18 @@ import MatchesList from '../views/matches-list'
 import { getMatches } from '../actions'
 
 class Matches extends Component {
-    constructor(props) {
-        super(props)
 
+    componentDidMount() {
         const { dispatch } = this.props;
 
         var timer = (cb) => {
+            dispatch(getMatches())
             setTimeout(() => {
-                dispatch(getMatches())
                 timer()
             }, 30000)
         }
 
         timer()
-    }
-
-    componentDidMount() {
-        const { dispatch } = this.props;
-        dispatch(getMatches())
     }
 
     render() {
