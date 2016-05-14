@@ -13,4 +13,5 @@ export const matchesReceive = (matches) => {
 export const getMatches = () => (dispatch, getState) =>
     api
         .getMatches()
-        .then(response => dispatch(matchesReceive(response.data)));
+        .then(response => dispatch(matchesReceive(response.data)))
+        .catch(response => console.error('Request failed', response));;

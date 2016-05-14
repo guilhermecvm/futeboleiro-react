@@ -9,7 +9,7 @@ const MatchRow = (match) => {
         <div style={css.match}>
             <div style={css.teamLeft}>
                 <img src={match.time_casa.escudo} style={css.shield}/>
-                {match.time_casa.nome}
+                <span style={css.teamNameLeft}>{match.time_casa.nome}</span>
             </div>
             {(() => {
                 switch (hasStarted) {
@@ -28,7 +28,7 @@ const MatchRow = (match) => {
                 }
             })()}
             <div style={css.teamRight}>
-                {match.time_visitante.nome}
+                <span style={css.teamNameRight}>{match.time_visitante.nome}</span>
                 <img src={match.time_visitante.escudo} style={css.shield}/>
             </div>
         </div>
@@ -45,16 +45,40 @@ var css = {
     teamLeft: {
         display: 'inline-block',
         width: 'calc(50% - 30px)',
+        position: 'relative',
         textAlign: 'left'
     },
     teamRight: {
         display: 'inline-block',
         width: 'calc(50% - 30px)',
+        position: 'relative',
         textAlign: 'right'
+    },
+    teamNameLeft: {
+        display: 'inline-block',
+        width: 'calc(100% - 50px)',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        position: 'absolute',
+        right: 0,
+        top: '50%',
+        transform: 'translateY(-50%)'
+    },
+    teamNameRight: {
+        display: 'inline-block',
+        width: 'calc(100% - 50px)',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        position: 'absolute',
+        left: 0,
+        top: '50%',
+        transform: 'translateY(-50%)'
     },
     versus: {
         display: 'inline-block',
-        width: '60px',
+        width: 60,
         textAlign: 'center'
     },
     versusInner: {
@@ -62,6 +86,7 @@ var css = {
     },
     shield: {
         margin: '0 10px',
-        verticalAlign: 'middle'
+        verticalAlign: 'middle',
+        width: 30
     }
 }
