@@ -10,10 +10,13 @@ new WebpackDevServer(webpack(config), {
         colors: true
     },
     proxy: {
-        '/temporeal/futebol/central.json': {
+        '/api/*': {
             target: 'http://globoesporte.globo.com/',
             secure: false,
-            changeOrigin: true
+            changeOrigin: true,
+            rewrite: function(req) {
+                req.url = req.url.replace(/^\/api/, '');
+            }
         }
     }
 }).listen(3000, 'localhost', function (err, result) {

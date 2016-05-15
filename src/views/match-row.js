@@ -40,7 +40,7 @@ export default MatchRow
 var css = {
     match: {
         padding: '15px 0',
-        borderTop: '1px solid rgb(236, 236, 236)'
+        borderBottom: '1px solid rgb(236, 236, 236)'
     },
     teamLeft: {
         display: 'inline-block',

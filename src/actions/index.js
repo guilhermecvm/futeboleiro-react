@@ -1,5 +1,6 @@
 import * as types from './types'
 import * as api from '../api'
+import _ from 'lodash'
 
 export const matchesReceive = (matches) => {
     return {
@@ -13,5 +14,8 @@ export const matchesReceive = (matches) => {
 export const getMatches = () => (dispatch, getState) =>
     api
         .getMatches()
-        .then(response => dispatch(matchesReceive(response.data)))
+        .then(response => {
+            response.data.jogos = _.sortBy(response.data.jogos, ['nome_campeonato', 'hora'])
+            dispatch(matchesReceive(response.data))
+        })
         .catch(response => console.error('Request failed', response));;
