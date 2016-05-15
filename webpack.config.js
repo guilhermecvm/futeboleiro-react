@@ -1,11 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path'
+import webpack from 'webpack'
 
-module.exports = {
+export default {
     devtool: 'eval',
     entry: [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
         'react-hot-loader/patch',
         './src/index'
     ],
@@ -40,4 +39,4 @@ module.exports = {
             loaders: ['json-loader']
         }]
     }
-};
+}
