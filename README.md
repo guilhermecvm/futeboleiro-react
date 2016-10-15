@@ -5,13 +5,13 @@
 First, clone the project:
 
 ```
-git clone git@github.com:guilhermecvm/futeboleiro.git
+git clone git@github.com:guilhermecvm/futeboleiro-react.git
 ```
 
 Then install the dependencies:
 
 ```
-cd futeboleiro
+cd futeboleiro-react
 npm install
 ```
 
